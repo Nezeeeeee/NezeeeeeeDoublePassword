@@ -52,6 +52,7 @@ namespace DoublePassword
             button2.Visible = false;
             textBox2.Visible = false;
             pictureBox1.Visible = false;
+            textBox1.Text = "";
         }
     }
 }
