@@ -19,40 +19,41 @@ namespace DoublePassword
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(textBox1.Text == "123")
+            #region firtsVerion
+            var button = (Button)sender;
+            if (button.Focused && textBox1.Text == "123")
             {
-                textBox2.Visible = true;
-                button2.Visible = true;
-                
-                
+                //действия для второго клика
+                label2.Visible = true;
+                label2.Text = "Введите второй пароль!";
+                textBox1.Text = "";
             }
             else
             {
-                MessageBox.Show("ошибка","введите верный пароль");
-            }
-            
-        }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if(textBox2.Text == "321")
-            {
-                MessageBox.Show("Успешно!", "Вы в системе!");
-                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBox1.Visible = true;
+                if (textBox1.Text == "321")
+                {
+                    MessageBox.Show("Успех", "Вы в системе!");
+                    pictureBox1.Visible = true;
+                    pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                    label2.Text = "Нормасик!";
+
+                }
+                //действия для первого клика
             }
-            else
-            {
-                MessageBox.Show("Введите верный пароль!");
-            }
+            #endregion
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            button2.Visible = false;
-            textBox2.Visible = false;
             pictureBox1.Visible = false;
             textBox1.Text = "";
+            label2.Text = "";
         }
+
+
+
+
+        
     }
 }
