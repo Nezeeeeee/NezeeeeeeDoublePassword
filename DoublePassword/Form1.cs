@@ -20,26 +20,59 @@ namespace DoublePassword
         private void button1_Click(object sender, EventArgs e)
         {
             #region firtsVerion
-            var button = (Button)sender;
-            if (button.Focused && textBox1.Text == "123")
-            {
-                //действия для второго клика
-                label2.Visible = true;
-                label2.Text = "Введите второй пароль!";
-                textBox1.Text = "";
-            }
-            else
-            {
+            //var button = (Button)sender;
 
-                if (textBox1.Text == "321")
+            //if (button.Focused && textBox1.Text == "123")
+            //{
+            //    //действия для второго клика
+            //    label2.Visible = true;
+            //    label2.Text = "Введите второй пароль!";
+            //    textBox1.Text = "";
+            //}
+            //else
+            //{
+
+            //    if (textBox1.Text == "321")
+            //    {
+            //        MessageBox.Show("Успех", "Вы в системе!");
+            //        pictureBox1.Visible = true;
+            //        pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            //        label2.Text = "Нормасик!";
+            //        textBox1.Text = "";
+            //        button1.Visible = false;
+
+            //    }
+            //    //действия для первого клика
+            //}
+            #endregion
+            #region SecondVersion
+            var button = (Button)sender;
+
+            if (button.Focused)
+            {
+                if (textBox1.Text == "123")
+                {
+                    //действия для второго клика
+                    label2.Visible = true;
+                    label2.Text = "Введите второй пароль!";
+                    textBox1.Text = "";
+                }
+                else if(textBox1.Text == "321")
                 {
                     MessageBox.Show("Успех", "Вы в системе!");
                     pictureBox1.Visible = true;
                     pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
                     label2.Text = "Нормасик!";
-
+                    textBox1.Text = "";
+                    button1.Visible = false;
+                    label1.Text = "";
+                    textBox1.Visible = false;
                 }
-                //действия для первого клика
+                else
+                {
+                    MessageBox.Show("Введите верный пароль!");
+                }
+                
             }
             #endregion
         }
@@ -49,11 +82,14 @@ namespace DoublePassword
             pictureBox1.Visible = false;
             textBox1.Text = "";
             label2.Text = "";
+            button1.Visible = true;
+            label1.Text = "Password";
+            textBox1.Visible = true;
         }
 
-
-
-
-        
+        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Версия проги: 0.01","О программе");
+        }
     }
 }
