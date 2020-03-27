@@ -89,6 +89,7 @@ namespace DoublePassword
             }
             else
             {
+                textBox1.Text = "";
                 state = false;
                 MessageBox.Show("Введите верный пароль!");
             }
@@ -115,6 +116,7 @@ namespace DoublePassword
             }
             else
             {
+                textBox1.Text = "";
                 state = false;
                 MessageBox.Show("Введите верный пароль!");
             }
@@ -136,7 +138,7 @@ namespace DoublePassword
 
         private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Версия проги: 0.01","О программе");
+            MessageBox.Show("Версия проги: 0.02","О программе");
         }
     }
 }
